@@ -13,7 +13,7 @@
 - tree Shaking = remove unused code
 
 
-There are two type of Export/Import
+# There are two type of Export/Import
 
 - Default Export/Import
 
@@ -24,3 +24,14 @@ import Component from "path";
 
 export const Component;
 import {Component} from "path";
+
+# React Hooks
+
+- React hooks is a normal javascript function at last.
+
+Two important hooks:
+- useState() hook used for create superpowerfull react variable
+- useEffect() hook
+
+
+Whenever a state variable update, React will rerender this component

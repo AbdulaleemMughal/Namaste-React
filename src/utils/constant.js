@@ -2,3 +2,5 @@
 //For Example
 
 export const LOGO_URL = "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png";
+
+export const CARD_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgJH9dRmWfTfuWkaw6qKwIT_DE-rcY161JwQbQfLmyuQ&s";
