@@ -31,7 +31,10 @@ import {Component} from "path";
 
 Two important hooks:
 - useState() hook used for create superpowerfull react variable
-- useEffect() hook
+- useEffect() hook is a typr of hook which accept two arguments :
+- first argument is a callback function or arrow function like :   () => {}
+- Second argument is dependencies array
+- The useEffect hook will be called after the UI is rendered
 
 
 Whenever a state variable update, React will rerender this component

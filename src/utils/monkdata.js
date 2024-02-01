@@ -1,5 +1,4 @@
-const resList = [
-    {
+const resList = [{
     data: {
       id: "334475",
       name: "KFC",
@@ -31,5 +30,4 @@ const resList = [
       deliveryTime: 36,
       avgRating: "4.1",
     },
-  },
-];
+  },];
