@@ -50,3 +50,15 @@
     background-color: blueviolet;
     color: white;
 }
+
+.filter {
+    display: flex;
+}
+
+.search {
+    padding: 22px 20px;
+}
+
+.search > input {
+    padding: 5px;
+}

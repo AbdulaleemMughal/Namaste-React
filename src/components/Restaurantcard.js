@@ -11,6 +11,7 @@ const RestaurantCard = (props) => {
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <p className="card-text">{props.cuisines}</p>
+          <p className="card-text">{props.city}</p>
           <a href="#" className="btn btn-success">Order Now</a>
         </div>
       </div>
