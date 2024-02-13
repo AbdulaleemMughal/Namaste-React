@@ -3,6 +3,16 @@ import resList from "../utils/monkdata";
 
 const RestaurantCard = (props) => {
   // const resData = props;
+
+  // const {
+  //   cloudnaryimageID,
+  //   name,
+  //   avgRating,
+  //   cuusines,
+  //   costForTwo,
+  //   sla,
+  // } = resData?.info;
+
   return (
     <div className="res-cards">
       <div className="card" style={{ width: "18rem" }}>
