@@ -2,6 +2,7 @@ import RestaurantCard from "./Restaurantcard";
 import { useState, useEffect } from "react";
 import resList from "../utils/monkdata";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -75,7 +76,10 @@ const Body = () => {
           ))
         } */}
 
-        <RestaurantCard name="KFC" cuisines="Biryani, pizza" />
+        {/* <link to={"/restaurants/" + items.cards.info.id} key={items.cards.info.id}><RestaurantCard key={items.cards.info.id} name="KFC" cuisines="Biryani, pizza" /></link> 
+        This will work by fetching the live data */}
+
+
         <RestaurantCard name="KFC" cuisines="Biryani, pizza" city="lahore"/>
         <RestaurantCard name="KFC" cuisines="Biryani, pizza" />
         <RestaurantCard name="KFC" cuisines="Biryani, pizza" />

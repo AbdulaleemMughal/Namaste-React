@@ -37,4 +37,9 @@ Two important hooks:
 - The useEffect hook will be called after the UI is rendered
 
 
-Whenever a state variable update, React will rerender this component
+- Whenever a state variable update, React will rerender this component
+
+
+# 2 type of routing in app
+ - Client Side Routing
+ - Server Side Routing
