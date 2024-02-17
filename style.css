@@ -62,3 +62,7 @@
 .search > input {
     padding: 5px;
 }
+
+.user-card {
+    border: 1px solid black;
+}

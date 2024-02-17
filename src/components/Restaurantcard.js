@@ -1,5 +1,4 @@
 import { CARD_URL } from "../utils/constant";
-import resList from "../utils/monkdata";
 
 const RestaurantCard = (props) => {
   // const resData = props;

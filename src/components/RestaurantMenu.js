@@ -1,28 +1,12 @@
-import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+// import { useState, useEffect } from "react";
+// import Shimmer from "./Shimmer";
 import { Params, useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
 
-    const [resInfo, setResInfo] = useState(null);
-
     const {resId} = useParams();
-    // We will use it in the fetched link
-
-    useEffect(() => {
-        fetchMenu();
-    },[]);
-
-    const fetchMenu = async () => {
-        const data = await fetch("https://www.swiggy.com/restaurants/milano-ice-cream-trol-bank-hospital-jubilee-hills-hyderabad-636702");
-
-        const json = await data.json();
-
-        console.log(json);
-
-        setResInfo(json.data);
-    };
-
+    const resInfo = useRestaurantMenu(resId);
     const {name, cuisines, costForTwoMessage } = 
     resInfo?.cards[0]?.card?.card?.info;
 
@@ -38,7 +22,7 @@ const RestaurantMenu = () => {
                 <h2>Menu</h2>
                 <ul>
                     {/* {itemCards.map((items) => (
-                        <li key={items.cards.info.id}>  Key will be the id of each menufood. It would be compulsory.
+                        <li key={items.cards.info.id}> // Key will be the id of each menufood. It would be compulsory.
                             {items.cards.info.name} - {" "}  {items.cards.info.price || items.card.info.defaultprice}
                         </li>
                     ))}   This will also work by fetching the live data*/}
