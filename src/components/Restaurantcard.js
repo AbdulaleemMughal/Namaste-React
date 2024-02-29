@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
   // } = resData?.info;
 
   return (
-    <div className="res-cards">
+    <div className="res-cards flex">
       <div className="card" style={{ width: "18rem" }}>
         <a href="#"> <img src={CARD_URL}
           className="card-img-top" alt="Image" /></a>
@@ -26,6 +26,20 @@ const RestaurantCard = (props) => {
       </div>
     </div>
   );
+};
+
+// Higher Order Component:
+// input => restaurantCard and returing restaurantCard with promoted lable on it.
+
+export const withPromotedLable = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;

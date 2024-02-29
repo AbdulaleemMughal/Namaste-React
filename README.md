@@ -43,3 +43,41 @@ Two important hooks:
 # 2 type of routing in app
  - Client Side Routing
  - Server Side Routing
+
+
+# Recommended css framework
+ - Material ui
+ - Chakra ui
+ - Bootstrap
+ - Ant ui
+
+ # Higher Order Component 
+  - Higher order componet is funcion that takes a compenent and return a component
+
+ # React Context
+  - Instead of using the props drilling, we can use react context for giving an access of data to all the components.\
+
+ # Redux Toolkit
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect our store to app
+  - Create a Slice (cart slice)
+  - Dispatch an action
+  - Selector
+
+ # Two type of Testing 
+  - Unit Testing
+  - Integration Testing
+  - End to End Testing -> e2e testing.
+
+ # Setting up testing in our app
+  - Installing React Tesing Library
+  - Installing Jest
+  - Installing babel dependencies
+  - Configure babel
+  - Configure parcel config file to disable default babel transpilation
+  - Jest Configuration => npx jest --init
+  - Install jsdom library => npm install --save-dev jest-environment-jsdom
+  - Install @babel/preset-react this for working the jsx for testing
+  - Include @babel/preset-react this into babel
+  - Installing the library npm i -D @testing-library/jest-dom

@@ -1,14 +1,17 @@
-import RestaurantCard from "./Restaurantcard";
-import { useState, useEffect } from "react";
+import RestaurantCard, {withPromotedLable} from "./Restaurantcard";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
   //State Variable  - Super Powerfull Variable
   const [listofRestaurants, setlistofRestaurants] = useState([]);
   const [filteredrestaurant, setFilteredrestaurant] = useState([]);
+
+  const RestaurantCardPromoted = withPromotedLable(RestaurantCard);
 
   const [searchText, setSearchText] = useState("");
   console.log("Body Rendered");
@@ -47,16 +50,17 @@ const Body = () => {
       <h1>Please, Check your Internet connection. You must might be online</h1>
     );
 
-
-  return (
+    const { LoggedInUser, setUserName} = useContext(UserContext);
+    
+    return (
     <div className="body">
-      <div className="filter">
-        <div className="search">
-          <input type="text" className="search-box" value={searchText} onChange={(e) => {
+      <div className="filter flex">
+        <div className="search m-4 p-4">
+          <input type="text" className="border border-solid border-black py-1" value={searchText} onChange={(e) => {
             setSearchText(e.target.value);
           }} />
           <button
-            className="btn btn-primary"
+            className="px-4 py-2 bg-green-300 rounded-lg"
             onClick={() => {
               console.log(searchText);
 
@@ -70,7 +74,8 @@ const Body = () => {
           >Search</button>
         </div>
 
-        <button className="filter-btn btn btn-primary" onClick={() => {
+        <div className="search m-4 p-4">
+        <button className="px-4 py-2 bg-gray-300 rounded-lg" onClick={() => {
           //Filter Logic Here
           const FilteredList = listofRestaurants.filter(
             (res) => res.data.avgRating > 4
@@ -79,8 +84,17 @@ const Body = () => {
           setlistofRestaurants(FilteredList);
 
         }}>Top Rated Restaurants</button>
+        </div>
+
+        <div className="m-4 p-4">
+          <lable>User name:</lable>
+            <input className="border border-black p-2"
+             value={LoggedInUser} 
+             onChange={(e) => (e.target.value)}/> 
+        </div>
+
       </div>
-      <div className="res-container">
+      <div className="res-container flex">
         {/* {
           filteredrestaurant.map((restaurant) => (
             <RestaurantCard key={restaurant.data.id} resData={restaurant} />
@@ -88,7 +102,11 @@ const Body = () => {
         } */}
 
         {/* <link to={"/restaurants/" + items.cards.info.id} key={items.cards.info.id}><RestaurantCard key={items.cards.info.id} name="KFC" cuisines="Biryani, pizza" /></link> 
-        This will work by fetching the live data */}
+        This will work by fetching the live data 
+        
+        {restaurant.data.promoted ? <RestaurantCardPromoted /> : <RestaurantCard />}  It will work while fetching the live data
+        
+        */}
 
 
         <RestaurantCard name="KFC" cuisines="Biryani, pizza" city="lahore" />
